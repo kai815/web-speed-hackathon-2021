@@ -50,7 +50,7 @@ const CoveredImage = ({ alt, src }) => {
           'w-auto h-full': containerRatio > imageRatio,
           'w-full h-auto': containerRatio <= imageRatio,
         })}
-        src={blobUrl}
+        src={src}
       />
     </div>
   );
