@@ -21,7 +21,6 @@ async function fetchBinary(url) {
  * @returns {Promise<T>}
  */
 async function fetchJSON(url) {
-  console.log("test")
   const result = await $.ajax({
     async: false,
     dataType: 'json',
