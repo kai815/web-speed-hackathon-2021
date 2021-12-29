@@ -18,10 +18,6 @@ import { SoundWaveSVG } from '../SoundWaveSVG';
 const SoundPlayer = ({ sound }) => {
   const { data, isLoading } = useFetch(getSoundPath(sound.id), fetchBinary);
 
-  const blobUrl = React.useMemo(() => {
-    return data !== null ? URL.createObjectURL(new Blob([data])) : null;
-  }, [data]);
-
   const [currentTimeRatio, setCurrentTimeRatio] = React.useState(0);
   /** @type {React.ReactEventHandler<HTMLAudioElement>} */
   const handleTimeUpdate = React.useCallback((ev) => {
@@ -43,7 +39,7 @@ const SoundPlayer = ({ sound }) => {
     });
   }, []);
 
-  if (isLoading || data === null || blobUrl === null) {
+  if (isLoading || data === null ) {
     return null;
   }
 
