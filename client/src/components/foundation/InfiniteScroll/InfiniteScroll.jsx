@@ -20,14 +20,14 @@ const InfiniteScroll = ({ children, fetchMore, items }) => {
       };
 
       // 画面最下部にスクロールしたタイミングで、登録したハンドラを呼び出す
-      if (hasReached && !prevReachedRef.current) {
+      if (hasReached() && !prevReachedRef.current) {
         // アイテムがないときは追加で読み込まない
         if (latestItem !== undefined) {
           fetchMore();
         }
       }
 
-      prevReachedRef.current = hasReached;
+      prevReachedRef.current = hasReached();
     };
 
     // 最初は実行されないので手動で呼び出す
