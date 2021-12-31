@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import sizeOf from 'image-size';
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { useFetch } from '../../../hooks/use_fetch';
 import { fetchBinary } from '../../../utils/fetchers';
@@ -41,7 +42,7 @@ const CoveredImage = ({ alt, src }) => {
 
   return (
     <div ref={callbackRef} className="relative w-full h-full overflow-hidden">
-      <img
+      <LazyLoadImage
         alt={alt}
         className={classNames('absolute left-1/2 top-1/2 max-w-none transform -translate-x-1/2 -translate-y-1/2', {
           'w-auto h-full': containerRatio > imageRatio,
