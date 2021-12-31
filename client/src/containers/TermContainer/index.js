@@ -1,2 +1,2 @@
 import TermContainer from './TermContainer';
-export default TimelineContainer;
+export default TermContainer;
