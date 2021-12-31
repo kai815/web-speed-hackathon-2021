@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 import { SoundPlayer } from '../../foundation/SoundPlayer';
 
@@ -11,7 +12,9 @@ import { SoundPlayer } from '../../foundation/SoundPlayer';
 const SoundArea = ({ sound }) => {
   return (
     <div className="relative w-full h-full border border-gray-300 rounded-lg overflow-hidden">
-      <SoundPlayer sound={sound} />
+      <LazyLoadComponent>
+        <SoundPlayer sound={sound} />
+      </LazyLoadComponent>
     </div>
   );
 };
