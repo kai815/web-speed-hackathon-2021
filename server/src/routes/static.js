@@ -7,7 +7,6 @@ import { CLIENT_DIST_PATH, PUBLIC_PATH, UPLOAD_PATH } from '../paths';
 const router = Router();
 
 function setCustomeHeaders (res) {
-  console.log("e")
   res.setHeader('Content-Encoding','gzip')
   res.setHeader('cache-control', 'max-age=604800, must-revalidate')
 }
