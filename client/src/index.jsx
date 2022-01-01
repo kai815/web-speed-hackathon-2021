@@ -4,11 +4,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { AppContainer } from './containers/AppContainer';
 
-window.addEventListener('load', () => {
-  ReactDOM.render(
+function App () {
+  return (
     <BrowserRouter>
       <AppContainer />
-    </BrowserRouter>,
-    document.getElementById('app'),
-  );
-});
+    </BrowserRouter>
+  )
+}
+ReactDOM.render(<App />, document.getElementById('app'),);

@@ -13,7 +13,7 @@ const UserProfileContainer = React.lazy(() => import('../UserProfileContainer'))
 const PostContainer = React.lazy(() => import('../PostContainer'))
 const TermContainer = React.lazy(() => import('../TermContainer'))
 const NotFoundContainer = React.lazy(() => import('../NotFoundContainer'))
-console.log(TimelineContainer)
+
 /** @type {React.VFC} */
 const AppContainer = () => {
   const { pathname } = useLocation();
