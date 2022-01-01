@@ -4,11 +4,12 @@ import session from 'express-session';
 
 import { apiRouter } from './routes/api';
 import { staticRouter } from './routes/static';
+const compression = require('compression')
 
 const app = Express();
 
 app.set('trust proxy', true);
-
+app.use(compression())
 app.use(
   session({
     proxy: true,
