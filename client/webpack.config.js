@@ -23,6 +23,7 @@ const config = {
   devtool: 'inline-source-map',
   entry: {
     main: [
+      'jquery-binarytransport',
       path.resolve(SRC_PATH, './index.css'),
       path.resolve(SRC_PATH, './buildinfo.js'),
       path.resolve(SRC_PATH, './index.jsx'),
