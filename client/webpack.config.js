@@ -23,9 +23,6 @@ const config = {
   devtool: 'inline-source-map',
   entry: {
     main: [
-      'core-js',
-      'regenerator-runtime/runtime',
-      'jquery-binarytransport',
       path.resolve(SRC_PATH, './index.css'),
       path.resolve(SRC_PATH, './buildinfo.js'),
       path.resolve(SRC_PATH, './index.jsx'),
@@ -48,6 +45,9 @@ const config = {
         ],
       },
     ],
+  },
+  optimization: {
+    chunkIds: 'named'
   },
   output: {
     filename: 'scripts/[name].js',
