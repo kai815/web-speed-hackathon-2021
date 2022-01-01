@@ -4,12 +4,10 @@ import session from 'express-session';
 
 import { apiRouter } from './routes/api';
 import { staticRouter } from './routes/static';
-const compression = require('compression')
 
 const app = Express();
 
 app.set('trust proxy', true);
-app.use(compression())
 app.use(
   session({
     proxy: true,
@@ -22,10 +20,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw({ limit: '10mb' }));
 
 app.use((_req, res, next) => {
-  res.header({
-    'Cache-Control': 'max-age=0, no-transform',
-    Connection: 'close',
-  });
   return next();
 });
 
