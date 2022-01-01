@@ -3,9 +3,14 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        corejs: '3',
         modules: false,
-        useBuiltIns: "entry",
+        useBuiltIns: "usage",
+        corejs: '3',
+        targets: {
+          ie: 11,
+          firefox: 30,
+          chrome: 55
+        },
       },
     ],
     [
